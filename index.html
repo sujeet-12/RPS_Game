@@ -1,0 +1,638 @@
+<!-- Everything is working in this game you can touch screen and icons also button for more details you have to explore whole game This game is made by hritik for a contest so dont copy this code only enjoy ~ Hritik Gautam -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.bunny.net/css?family=aladin:400|alegreya-sans-sc:400|atomic-age:400|bungee-inline:400|Aldrich:400" rel="stylesheet" />
+    
+    
+      <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="game.css">
+</head>
+<body class="bg-black flex items-center justify-center min-h-screen">
+
+
+        
+    <div class="container w-90 h-full p-4 pb-6 m-2 rounded-lg shadow-lg bg-gray-800 text-white">
+     
+     <div class="heap grid grid-cols-3 text-black text-center ">  
+<p class="soundbox">||||||||</p><p class="device text-2xl pb-1">NINJA</p><p class="soundbox">||||||||</p></div>
+      <div class="screen w-full h-64 grid items-center bg-green-900 rounded-lg text-center text-green-500 m-auto mb-4 shadow-md p-2">
+        <div class="loading-content grid grid-rows-3 items-center">
+            <div class="loading-text gamename">Rock Paper Scissors</div>
+            <br />
+             <div id="SquareLoader"></div>
+             <br />
+             <div class="text text-sm">
+             [Loading Assets.... (1/1)]</div>
+        </div>
+        
+        <div class="TC hidden bg-green-800 rounded-lg grid p-3 h-60 overflow-scroll text-sm text-left">
+    <h2 class="bg-green-900 text-green-500 static text-lg font-bold text-center p-1 sticky">Terms and Conditions</h2>
+    <br />
+    <div class="grid grid-cols-2"> <p>Last updated: [8/8/24]</p>
+        
+    <p class="text-right">Version:[2.0.0]</p></div>
+   <br />
+    <p>1. Introduction:<br /> These Terms and Conditions ("Terms") govern your access to and use of our game ("RPS-Game"). By playing the Game, you agree to be bound by these Terms. If you do not agree, do not play the Game.</p><br />
+    <p>2. Eligibility: <br /> You must be at least 13 years old to play the Game. By using the Game, you represent and warrant that you are at least 13 years of age. If you are under 13, you must obtain parental consent before playing.</p><br />
+    <p>3. Game Rules: <br /> You agree to follow all rules and guidelines established within the Game. Violations of these rules may result in penalties, including but not limited to account suspension or termination.
+    </p><br />
+    <p>4. User Conduct: <br /> You agree not to engage in any of the following prohibited activities: - Cheating or exploiting glitches. - Harassment or bullying of other players. - Impersonating other players or game administrators. - Using offensive language or content.</p><br/>
+    <p>5. Intellectual Property: <br /> All content within the Game, including but not limited to graphics, audio, and software, is owned by us or our licensors and is protected by copyright, trademark, and other intellectual property laws. You may not reproduce, distribute, or create derivative works without our permission.</p><br />
+    <p>6. Third-Party Links: <br /> Our Game may contain links to third-party websites or services that are not owned or controlled by us. We have no control over, and assume no responsibility for, the content, privacy policies, or practices of any third-party websites or services.</p><br />
+    <p>7. Limitation of Liability: <br /> To the fullest extent permitted by law, we shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of profits, data, or use, arising from your access to or use of the Game.</p><br />
+    <p>8. Dispute Resolution: <br /> In the event of any dispute arising out of or relating to these Terms or your use of the Game, you agree to resolve the dispute through binding arbitration in accordance with the rules of the American Arbitration Association.
+    </p><br />
+    <p>9. Changes to the Terms We reserve the right to modify these Terms at any time. We will notify you of any changes by posting the new Terms on this page. You are advised to review these Terms periodically for any changes.</p><br />
+    <p>10. Contact Us If you have any questions about these Terms, please contact us at [sujeetgau12@gmail.com].</p><br />
+    <p class="bg-green-800 text-center p-4 rounded-lg border-2 border-green-700 hover:bg-green-900 transition">By playing the Game, you acknowledge that you have read, understood, and agree to these Terms and Conditions.</p>
+    
+    <button id="agree-terms" class="music bg-green-500 text-green-900 rounded-md p-2 mt-4">I Agree, Show Game</button>
+</div>
+ 
+        
+        <div class="game-content hidden">
+   
+        
+       <div class="w-full header sticky top-0 bg-green-500 text-green-800 flex justify-between items-center rounded-sm h-6 p-2 gap-3">
+   <p class="text-l font-bold">Rock Paper Scissors</p>
+    <div class="game-icons flex space-x-2">
+    <lord-icon
+    src="https://cdn.lordicon.com/vihyezfv.json"
+    class="info-circle"
+    trigger="loop-on-hover"
+    style="width:20px;height:20px">
+</lord-icon>
+    <lord-icon
+    src="https://cdn.lordicon.com/kthelypq.json"
+    trigger="loop-on-hover"
+    class="circle-user"
+    style="width:20px;height:20px">
+</lord-icon>
+    <lord-icon
+    src="https://cdn.lordicon.com/lecprnjb.json"
+    trigger="loop-on-hover"
+    class="sett"
+    style="width:20px;height:20px">
+</lord-icon>
+    </div>
+</div>
+
+
+<div class="setting hidden" id="settings">
+    <div class="w-full bg-green-700 text-green-300 p-1 rounded-lg text-center mt-3 border-2 border-green-900">
+     Settings
+    <p class="w-full bg-green-600 p-1 mb-1 rounded-md border-2 border-green-800 music" id="music">Music ON</p>
+    <p class="w-full bg-green-600 p-1 rounded-md border-2 border-green-800" id="animate">Style ON</p>
+    </div>
+</div>
+
+<!-- Confirmation Popup -->
+<div class="confirmation-popup hidden" id="confirmation-popup">
+    <div class="w-full mt-2 bg-green-700 text-green-500 p-2 rounded-lg text-center border-2 border-green-900">
+  
+        <p>Are you sure you want to restart the game?</p>
+        <div class="confirmation-buttons mt-4">
+            <button id="confirm-yes" class="bg-green-500 text-green-900 px-4 py-2 rounded-md border-2 border-green-700">Restart Match!</button>
+            <button id="confirm-no" class="bg-green-900 text-green-500 px-4 py-2 rounded-md border-2 border-green-700">No, continue!</button>
+        </div>
+    </div>
+</div>
+
+<div class="popup-box" id="popup">
+    <div class="popup-content bg-green-700 w-full mt-2 text-green-200 p-2 rounded-lg text-center shadow-lg border-2 border-green-600">
+    
+    <div class="trophy" id="trophy">
+            <div id="bl1"></div>
+            <div id="bl2"></div>
+            <div id="bl3"></div>
+            <div id="bl4">#1</div>
+        </div>
+    
+        
+        <p class="text-lg font-semibold" id="popup-message"> Congratulations, you are the winner!</p>
+        
+           <button id="restart-btn" class="mt-4 bg-green-500 text-green-900 rounded-md p-2" onclick="reset()"><i class="fas fa-redo mr-2"></i>Restart</button>
+           
+              <button id="restart-btn" class="mt-4 bg-green-500 text-green-900 rounded-md p-2" onclick="scboard()"><i class="fas fa-table mr-2"></i>Scoreboard</button>  
+     <!--new div place -->
+    </div>
+</div>
+    
+<div class="scoreboard hidden" id="scoreboard">
+    <div class="bg-green-700 w-full text-green-200 rounded-lg text-center shadow-lg mt-2 border-2 border-green-600">
+        <p>Scoreboard</p>
+        <table class="w-full text-center mb-2">
+         <thead>
+            <tr class="text-green-400 bg-green-800">
+                    <th>Rounds</th>
+                    <th>Result</th>
+                    <th>YOUR P</th>
+                    <th>AI'S P</th>
+                </tr>
+            </thead>
+            <tbody id="scoreboard-body" >
+                <!-- Rows will be dynamically added here -->
+            </tbody>
+        </table>
+        <p class="text-sm text-green-400">Powered By Ninja •LIVE</p>
+    </div>
+</div>
+    
+    
+<div id="info" class="w-full hidden mt-2 bg-gray-700 p-2 rounded shadow">
+ <!-- In the #info div -->
+<i class="fa fa-x close-popup float-right text-green-500 bg-gray-800 p-2 rounded-md" id="close-info"></i>
+
+    <h2 class="text-lg font-bold">Game Information</h2>
+    <p>This is a simple Rock Paper Scissors game. The player competes against an AI. Each round, choose rock, paper, or scissors to try to win!</p><br />
+     <h2 class="text-lg font-bold">Rules</h2>
+    <p>Rock beats Scissors, Scissors beats Paper, Paper beats Rock. Best of 3 rounds wins the match.</p>
+</div>
+
+<div id="rules" class="w-full hidden mt-2 bg-green-700 p-2 rounded shadow">
+  <i class="fa fa-x close-popup float-right text-green-200 bg-green-800 p-2 rounded-md " id="close-rules"></i>
+
+      <!-- Profile Section -->
+             <div class="flex items-center text-left space-x-4">
+        <img src="https://us.123rf.com/450wm/dchancreative/dchancreative2201/dchancreative220100339/180174368-hg-monogram-logo-letter-with-modern-geometric-orange-style-design-geometric-hexagonal-shape-rounded.jpg?ver=6&hl=en-US"
+            alt="Profile Image" class="h-20 w-20 rounded-lg border-4 border-green-500">
+        <div>
+        <p class="text-2xl sm:text-4xl text-green-300 font-bold">HRITIK GAUTAM</p>
+               
+               <div class="flex text-green-300"> <p>Owner of GAME/</p>
+        
+    <p class="text-right">Mumbai, Maharashtra</p></div>   
+          
+         
+            
+               <div class="grid grid-cols-4 ">
+                <a href="https://codepen.io/sujeet-12" class="text-green-400 hover:text-white">
+                    <ion-icon name="logo-codepen" class="h-6 w-6"></ion-icon>
+                </a>
+                <a href="https://github.com/sujeet-12" class="text-green-400 hover:text-white">
+                    <ion-icon name="logo-github" class="h-6 w-6 rotate-60"></ion-icon>
+                </a>
+                <a href="https://bento.me/hritik-gautam" class="text-green-400 hover:text-white">
+                    <ion-icon name="link" class="h-6 w-6"></ion-icon>
+                </a>
+                <a href="https://www.linkedin.com/in/hritik-gautam-4bb2781b6?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="text-green-400 hover:text-white">
+                    <ion-icon name="logo-linkedin" class="h-6 w-6"></ion-icon>
+                </a>
+            </div>
+        </div>
+    </div>
+                <div class="mt-2 p-2 bg-green-600 rounded-lg text-green-300">
+                    <p class=" text-sm text-left">
+                        Hello Everyone, I'm Hritik, a passionate web developer always eager to learn and innovate for a better future.
+                    </p>
+                </div>
+        
+        
+</div>
+
+
+   
+            <div class="result text-1x1 font-bold mt-5 mb-4">Play Now!</div>
+            
+         
+    
+            <div class="w-full grid grid-cols-3 items-center justify-around mb-4">
+                <div class="flex gap-4 items-center bg-green-500 text-green-900 border-4 border-green-800 rounded-lg p-2 text-2xl font-bold">
+                
+                <i class="fa fa-user text-sm"></i>     
+                <p class="user-s">You:0</p>
+              
+                </div>
+                
+                  <div class="grid grid-cols-3 items-center justify-around">
+                <div class="user-choice text-center">
+                    <i class="fa fa-hand-paper" id="user-icon"></i>
+                </div>
+                
+                <div class="divider grid items-center w-0.5 h-10 bg-green-400 ml-5 "></div>
+                
+                <div class="ai-choice text-center">
+                    <i class="fa fa-hand-paper" id="ai-icon"></i>
+                </div>
+            </div>
+            
+                <div class="bg-green-500 flex gap-4 items-center text-green-900 border-4 border-green-800 rounded-lg p-2 text-2xl font-bold">
+                
+                <i class="fa fa-robot text-sm"></i>  
+                <p class="comp-s">AI:0</p>
+                              
+                </div>
+            </div>
+
+             <div class="bg-green-700 rounded-md grid grid-cols-2 items-center h-12 mb-3  border-4 border-green-800 text-green-400 text-sm">
+    <div class="rounds">1st Round</div>
+    
+    <div class="points">Points: 0</div>
+    </div>
+              
+         <ul class="bubbles">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    </ul>   
+             <div class="w-full footer sticky bottom-0 bg-green-500 text-green-900 flex justify-between items-center rounded-sm h-6 p-2 ">
+      
+   <lord-icon
+    src="https://cdn.lordicon.com/mdmniuqr.json"
+    trigger="click"
+    onclick="scboard()"
+    style="width:20px;height:20px">
+</lord-icon>       
+    <p>Live</p>              
+ <marquee class="footer-left w-60 text-sm"><i class="fa fa-bullhorn"></i> Game News: This Game is made by Hritik Gautam so, dont copy this code in any condition! © All Rights Reserved 2024</marquee> 
+    <div class="footer-right w-12" id="current-time"></div>  
+</div>
+
+        </div>
+     </div>  
+     
+      
+
+    
+ 
+       
+  <div class="btn flex gap-6 justify-center items-center mt-5 w-full  h-30">
+          
+            <button class="button choice  drop-shadow-xl text-white rounded-lg p-4 text-2xl w-20 h-20" data-choice="rock">
+                <i class="fa fa-hand-rock"></i>
+            </button>
+              <button class="button choice drop-shadow-xl text-white rounded-lg p-4 text-2xl w-20 h-20" data-choice="paper">
+                <i class="fa fa-hand-paper"></i>
+            </button>
+            <button class="button choice  drop-shadow-xl text-white rounded-lg p-4 text-2xl w-20 h-20" data-choice="scissors">
+                <i class="fa fa-hand-scissors"></i>
+            </button>
+             <button class="button dope drop-shadow-xl text-white rounded-lg p-4 text-2xl w-20 h-20" data-choice="controler">
+                <i class="fa fa-redo"></i>
+            </button>
+        </div>
+</div>
+    
+   <audio id="audio" src="https://kitaundang.net/wp-content/uploads/2024/06/musik-dian-bari.mp3" preload="auto" autoplay loop></audio>
+  
+
+<script>
+// Button choice event listeners
+const choices = document.querySelectorAll('.choice');
+choices.forEach(choice => choice.addEventListener('click', handleUserChoice));
+
+// Disable choices initially
+disableChoices();
+
+function disableChoices() {
+    choices.forEach(choice => (choice.disabled = true));
+}
+
+function enableChoices() {
+    choices.forEach(choice => (choice.disabled = false));
+}
+
+// Variables
+let userPoints = 0;
+let computerPoints = 0;
+let userRoundWins = 0;
+let computerRoundWins = 0;
+let totalUserPoints = 0;
+let totalComputerPoints = 0;
+let round = 1;
+const totalRounds = 3;
+const pointsToWin = 5;
+let scoreboardData = [];
+
+// DOM Elements
+const userScoreDisplay = document.querySelector('.user-s');
+const computerScoreDisplay = document.querySelector('.comp-s');
+const resultDisplay = document.querySelector('.result');
+const roundsDisplay = document.querySelector('.rounds');
+const totalPointsDisplay = document.querySelector('.points');
+
+
+// Event Listeners
+window.addEventListener('load', initializeGame);
+choices.forEach(choice => choice.addEventListener('click', handleUserChoice));
+document.querySelector('[data-choice="controler"]').addEventListener('click', showConfirmationPopup);
+document.getElementById('confirm-yes').addEventListener('click', confirmRestart);
+document.getElementById('confirm-no').addEventListener('click', hideConfirmationPopup);
+document.querySelector('.info-circle').addEventListener('click', toggleInfo);
+document.querySelector('.circle-user').addEventListener('click', toggleRules);
+document.getElementById('close-info').addEventListener('click', () => closePopup('info'));
+document.getElementById('close-rules').addEventListener('click', () => closePopup('rules'));
+document.querySelector('.sett').addEventListener('click', function() {
+    $("#settings").toggle();
+    $("#popup").hide();
+    $("#rules").hide();
+    $("#info").hide();
+    $("#scoreboard").hide();
+});
+
+
+ const audio = document.getElementById('audio');
+        const playPauseButton = document.querySelector('.music.bg-green-500'); // Button to play/pause audio
+        const musicText = document.getElementById('music'); // Element to show music state
+        let isMusicOn = false;
+
+        // Toggle audio playback with the button
+        playPauseButton.addEventListener('click', function() {
+            if (isMusicOn) {
+                audio.pause();
+                musicText.textContent = "Music OFF";
+            } else {
+                audio.play();
+                musicText.textContent = "Music ON";
+            }
+            isMusicOn = !isMusicOn;
+        });
+
+        // Additional functionality for the second element (the one with ID music)
+        musicText.addEventListener('click', function() {
+            if (isMusicOn) {
+                audio.pause();
+                musicText.textContent = "Music OFF"; // Change text to Music ON when paused
+                isMusicOn = false;
+            } else {
+                audio.play();
+                musicText.textContent = "Music ON"; // Change text to Music OFF when playing
+                isMusicOn = true;
+            }
+        });
+
+
+
+
+
+function initializeGame() {
+    disableChoices();
+    setTimeout(() => {
+        document.querySelector('.loading-content').classList.add('hidden');
+        document.querySelector('.TC').classList.remove('hidden'); // Show T&C
+    }, 1000);
+}
+
+
+document.getElementById('agree-terms').addEventListener('click', function() {
+    document.querySelector('.TC').classList.add('hidden'); // Hide T&C
+    document.querySelector('.game-content').classList.remove('hidden'); 
+    enableChoices(); 
+    startGame(); 
+});
+
+
+
+function startGame() {
+    round = 1;
+    roundsDisplay.textContent = formatRoundText(round);
+    totalPointsDisplay.textContent = `Points: ${totalUserPoints}`;
+    resetPoints();
+    enableChoices();
+    updateScoreboard();
+}
+
+function handleUserChoice() {
+    const userChoice = this.dataset.choice;
+    const computerChoice = getComputerChoice();
+    
+    updateChoiceIcons(userChoice, computerChoice);
+    const result = checkResult(userChoice, computerChoice);
+    updateScore(result);
+    updateResultDisplay(result);
+    checkRoundEnd();
+}
+
+function getComputerChoice() {
+    const choices = ['rock', 'paper', 'scissors'];
+    return choices[Math.floor(Math.random() * choices.length)];
+}
+
+function updateChoiceIcons(userChoice, computerChoice) {
+    document.getElementById('user-icon').className = `fa fa-hand-${userChoice}`;
+    document.getElementById('ai-icon').className = `fa fa-hand-${computerChoice}`;
+}
+
+function checkResult(userChoice, computerChoice) {
+    if (userChoice === computerChoice) return 'It\'s a tie!';
+    if ((userChoice === 'rock' && computerChoice === 'scissors') ||
+         (userChoice === 'paper' && computerChoice === 'rock') ||
+        (userChoice === 'scissors' && computerChoice === 'paper')) {
+        userPoints++;
+        return '+1 Point to You!';
+     } else {
+        computerPoints++;
+        return '+1 Point to AI!';
+    }
+}
+
+function updateScore(result) {
+    userScoreDisplay.textContent = `You: ${userPoints}`;
+    computerScoreDisplay.textContent = `AI: ${computerPoints}`;
+}
+
+function updateResultDisplay(result) {
+    resultDisplay.textContent = result;
+}
+
+function checkRoundEnd() {
+    if (userPoints === pointsToWin || computerPoints === pointsToWin) {
+        determineRoundWinner();
+        disableChoices();
+        updateTotalPoints();
+        if (round < totalRounds) {
+            setTimeout(startNewRound, 3000);
+        } else {
+            determineMatchWinner();
+            showPopup();
+        }
+    }
+}
+
+function determineRoundWinner() {
+    if (userPoints > computerPoints) {
+        userRoundWins++;
+        resultDisplay.textContent = 'You win the Round!';
+    } else {
+        computerRoundWins++;
+        resultDisplay.textContent = 'Computer wins the Round!';
+    }
+}
+
+function updateTotalPoints() {
+    totalUserPoints += userPoints;
+    totalComputerPoints += computerPoints;
+    totalPointsDisplay.textContent = `Points: ${totalUserPoints}`;
+
+    let result = userPoints > computerPoints ? "WIN" : (userPoints < computerPoints ? "LOSE" : "TIE");
+    scoreboardData.push({
+        round: round,
+        result: result,
+        userPoints: userPoints,
+        aiPoints: computerPoints
+    });
+
+    updateScoreboard();
+}
+
+function updateScoreboard() {
+    const scoreboardBody = document.getElementById("scoreboard-body");
+    scoreboardBody.innerHTML = "";
+
+    for (let i = 0; i < 3; i++) {
+        const data = scoreboardData[i] || { round: i + 1, result: "---", userPoints: 0, aiPoints: 0 };
+        const row = document.createElement("tr");
+        row.className = "bg-green-400 text-green-600";
+        row.innerHTML = `
+            <td>#${data.round}</td>
+            <td>${data.result}</td>
+            <td>${data.userPoints}</td>
+            <td>${data.aiPoints}</td>
+        `;
+        scoreboardBody.appendChild(row);
+    }
+}
+
+function startNewRound() {
+    round++;
+    roundsDisplay.textContent = formatRoundText(round);
+    resetPoints();
+    enableChoices();
+    resultDisplay.textContent = 'Play Now!';
+}
+
+function resetPoints() {
+    userPoints = 0;
+    computerPoints = 0;
+    updateScore();
+}
+
+function determineMatchWinner() {
+    let matchWinner = userRoundWins > computerRoundWins ? 'You win the match!' :
+                      userRoundWins < computerRoundWins ? 'Computer wins the match!' :
+                      'The match is a tie!';
+    resultDisplay.textContent = matchWinner;
+}
+
+function showPopup() {
+    const popupMessage = document.getElementById("popup-message");  
+    const trophy = document.getElementById("trophy");
+    const finalUserScore = document.getElementById("final-user-score");
+    const finalAiScore = document.getElementById("final-ai-score");
+
+    if (userRoundWins > computerRoundWins) {
+        $("#trophy").show();
+        popupMessage.textContent = 'Congratulations, you are the winner!';
+    } else {
+        $("#trophy").hide();
+        popupMessage.textContent = 'You lose, well played! Try again.';
+    }
+    
+    $("#popup").fadeIn();
+}
+
+function scboard() {
+    updateScoreboard();
+    $("#scoreboard").toggle(); 
+    $("#rules").hide();
+    $("#info").hide();
+    $("#settings").hide();
+}
+
+function reset() {
+    $("#popup").hide(); 
+    restartMatch();
+}
+
+function restartMatch() {
+    userPoints = 0;
+    computerPoints = 0;
+    userRoundWins = 0;
+    computerRoundWins = 0;
+    totalUserPoints = 0;
+    totalComputerPoints = 0;
+    round = 1;
+    scoreboardData = [];
+    startGame();
+    $("#popup").hide();
+    $("#rules").hide();
+    $("#info").hide();
+    $("#scoreboard").hide();
+    $("#settings").hide();
+}
+
+function formatRoundText(round) {
+    const suffixes = ['th', 'st', 'nd', 'rd'];
+    const suffix = (round % 100 > 10 && round % 100 < 20) ? suffixes[0] : suffixes[Math.min(round % 10, 3)];
+    return `${round}${suffix} Round`;
+}
+
+function showConfirmationPopup() {
+    document.getElementById('confirmation-popup').classList.remove('hidden');
+  
+}
+
+function hideConfirmationPopup() {
+    document.getElementById('confirmation-popup').classList.add('hidden');
+    $("#rules").hide();
+    $("#info").hide();
+    $("#scoreboard").hide();
+    $("#settings").hide();
+    
+}
+
+function confirmRestart() {
+    hideConfirmationPopup();
+    restartMatch();
+}
+
+
+function toggleInfo() {
+    $("#rules").hide();
+    $("#info").toggle();
+}
+
+function toggleRules() {
+    $("#rules").toggle();
+    $("#info").hide();
+}
+
+function closePopup(popupId) {
+    $("#rules").hide();
+    $("#info").hide();
+}
+
+
+
+function time(){
+var d = new Date();
+var hours = d.getHours();
+var mins = d.getMinutes();
+var secs = d.getSeconds();
+
+document.getElementById("current-time").innerHTML = hours + ":" + mins + ":" + secs;
+}
+
+setInterval(time, 1000);
+    </script>
+</body>
+</html>
